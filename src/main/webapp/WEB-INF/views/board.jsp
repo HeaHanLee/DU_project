@@ -83,10 +83,11 @@
 
 <div class="container">
     <h2 class="writing-header">게시판 ${mode=="new" ? "글쓰기" : "읽기"}</h2>
-    <form id="form" class="frm" action="" method="post">
+    <form id="form" class="frm" action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="bno" value="${boardDto.bno}">
 
         <input name="title" type="text" value="${boardDto.title}" placeholder="  제목을 입력해 주세요." ${mode=="new" ? "" : "readonly='readonly'"}>            <br>
+        <input type="file" multiple="multiple" name="file" />
         <textarea name="content" rows="20" placeholder=" 내용을 입력해 주세요." ${mode=="new" ? "" : "readonly='readonly'"}>${boardDto.content}</textarea>      <br>
 
 

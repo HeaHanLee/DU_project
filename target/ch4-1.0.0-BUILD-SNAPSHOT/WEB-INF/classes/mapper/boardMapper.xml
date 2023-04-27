@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.fastcampus.ch4.dao.BoardMapper">
+<mapper namespace="com.DU_project.dao.BoardMapper">
 
     <select id="count" resultType="int">
         SELECT count(*) FROM board
@@ -18,9 +18,9 @@
 
     <insert id="insert" parameterType="BoardDto">
         INSERT INTO board
-            (title, content, writer)
+            (title, content, writer,file_name)
         VALUES
-            (#{title}, #{content}, #{writer})
+            (#{title}, #{content}, #{writer}, #{fileName})
     </insert>
 
     <select id="selectAll" resultType="BoardDto">
@@ -95,6 +95,8 @@
         WHERE true
         <include refid="searchCondition"/>
     </select>
+    
+
 
 
 

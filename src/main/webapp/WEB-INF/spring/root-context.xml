@@ -34,4 +34,9 @@
 	</bean>
 	<tx:annotation-driven/>
 	<context:component-scan base-package="com.fastcampus.ch4"/>
+
+	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg value="C:/Users/lhh91/IdeaProjects/ch4/src/main/webapp/resources/image" />
+	</bean>
+
 </beans>
